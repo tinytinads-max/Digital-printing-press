@@ -1,0 +1,1092 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Printora | Premium Digital Printing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+section[id]{scroll-margin-top:95px}
+
+:root{
+    --orange:#D97832;
+    --orange-dark:#B95C20;
+    --dark:#30343A;
+    --dark2:#24282D;
+    --light:#F2F2F0;
+    --muted:#777D83;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--light);
+    color:#30343A;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;left:0;
+    z-index:1000;
+    background:rgba(48,52,58,.97);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #ffffff15;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    padding:19px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-family:'Playfair Display',serif;
+    font-size:29px;
+    font-weight:800;
+}
+
+.logo span{color:var(--orange)}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#eee;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{color:var(--orange)}
+
+.dropdown{position:relative}
+
+.services-nav-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.dropdown-toggle{
+    border:0;
+    background:transparent;
+    color:#eee;
+    cursor:pointer;
+    font:inherit;
+    font-size:12px;
+    padding:6px;
+    transition:.3s;
+}
+
+.dropdown-toggle:hover{color:var(--orange)}
+.dropdown.open .dropdown-toggle i{transform:rotate(180deg)}
+.dropdown-toggle i{transition:transform .25s ease}
+
+.dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:210px;
+    background:white;
+    border-radius:9px;
+    padding:12px;
+    display:block;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(8px);
+    transition:opacity .25s ease,transform .25s ease,visibility .25s ease;
+    box-shadow:0 12px 30px #0002;
+    z-index:1100;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown.open .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+.dropdown-menu a{
+    display:block;
+    color:var(--dark);
+    padding:11px;
+}
+
+.dropdown-menu a:hover{
+    background:#f6eee8;
+    border-radius:5px;
+    color:var(--orange-dark);
+}
+
+.nav-btn{
+    background:var(--orange);
+    color:white!important;
+    padding:12px 21px;
+    border-radius:4px;
+    font-weight:700;
+}
+
+.nav-btn:hover{background:var(--orange-dark)}
+
+.menu-toggle{
+    display:none;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:720px;
+    background:
+    linear-gradient(90deg,rgba(35,38,42,.96),rgba(35,38,42,.70),rgba(35,38,42,.15)),
+    url('https://i.pinimg.com/1200x/ed/8d/93/ed8d932be721ec06cf6d6ae4a37bece0.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:150px 8% 100px;
+    color:white;
+}
+
+.hero-content{
+    max-width:650px;
+    animation:slideUp 1s ease;
+}
+
+.hero-tag{
+    color:#F0A36C;
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(45px,6vw,75px);
+    line-height:1.15;
+    margin:22px 0;
+}
+
+.hero h1 span{color:#F0A36C}
+
+.hero p{
+    color:#d5d8de;
+    line-height:1.9;
+    max-width:540px;
+    font-size:16px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:16px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:15px 27px;
+    display:inline-block;
+    border-radius:4px;
+    transition:.3s;
+    font-weight:700;
+}
+
+.btn-gold{
+    background:var(--orange);
+    color:white;
+}
+
+.btn-outline{
+    border:1px solid #ffffff80;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px #0003;
+}
+
+.btn-gold:hover{background:var(--orange-dark)}
+
+/* COMMON */
+
+section{padding:100px 7%}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-heading small{
+    color:var(--orange-dark);
+    letter-spacing:3px;
+    font-weight:700;
+}
+
+.section-heading h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(32px,4vw,45px);
+    margin-top:13px;
+    color:var(--dark);
+}
+
+.section-heading p{
+    color:var(--muted);
+    margin-top:14px;
+}
+
+/* INTRO */
+
+.intro{background:white}
+
+.intro-content{
+    max-width:1050px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
+}
+
+.intro-image img{
+    width:100%;
+    height:410px;
+    object-fit:cover;
+    border-radius:8px;
+    box-shadow:18px 18px 0 #eee9e4;
+}
+
+.intro-text small{
+    color:var(--orange-dark);
+    letter-spacing:3px;
+    font-weight:700;
+}
+
+.intro-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:40px;
+    margin:18px 0;
+    color:var(--dark);
+}
+
+.intro-text p{
+    color:var(--muted);
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+/* SERVICES */
+
+.services{background:#F0F0EE}
+
+.service-grid{
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+.service-card{
+    background:white;
+    border-radius:9px;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 8px 25px #30343A0c;
+}
+
+.service-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px #30343A20;
+}
+
+.service-img{
+    height:240px;
+    overflow:hidden;
+}
+
+.service-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.service-card:hover img{transform:scale(1.12)}
+
+.service-info{padding:26px}
+
+.service-info i{
+    color:var(--orange);
+    font-size:25px;
+}
+
+.service-info h3{
+    font-family:'Playfair Display',serif;
+    font-size:23px;
+    margin:14px 0 10px;
+    color:var(--dark);
+}
+
+.service-info p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.8;
+}
+
+.service-info a{
+    display:inline-block;
+    color:var(--orange-dark);
+    text-decoration:none;
+    margin-top:20px;
+    font-weight:700;
+}
+
+.service-info a:hover{color:var(--dark)}
+
+/* WHY US */
+
+.why{
+    background:var(--dark);
+    color:white;
+}
+
+.why .section-heading h2{color:white}
+
+.why-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.why-card{
+    text-align:center;
+    padding:35px 18px;
+    border:1px solid #ffffff20;
+    border-radius:8px;
+    transition:.4s;
+}
+
+.why-card:hover{
+    background:#ffffff10;
+    transform:translateY(-8px);
+    border-color:var(--orange);
+}
+
+.why-card i{
+    font-size:35px;
+    color:var(--orange);
+    margin-bottom:20px;
+}
+
+.why-card h3{margin-bottom:12px}
+
+.why-card p{
+    color:#c5c7c9;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* GALLERY */
+
+.gallery{background:white}
+
+.gallery-grid{
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.gallery-item{
+    height:270px;
+    overflow:hidden;
+    border-radius:8px;
+    position:relative;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img{transform:scale(1.1)}
+
+.gallery-item::after{
+    content:"PRINTORA COLLECTION";
+    position:absolute;
+    bottom:0;left:0;
+    width:100%;
+    padding:20px;
+    color:white;
+    letter-spacing:2px;
+    font-size:12px;
+    background:linear-gradient(transparent,#000b);
+}
+
+/* CTA */
+
+.cta{
+    background:
+    linear-gradient(#30343Aeb,#30343Aeb),
+    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    text-align:center;
+    color:white;
+}
+
+.cta h2{
+    font-family:'Playfair Display',serif;
+    font-size:43px;
+    margin-bottom:18px;
+}
+
+.cta p{
+    color:#d5d8de;
+    margin-bottom:30px;
+}
+
+/* CONTACT */
+
+.contact{background:#F2F2F0}
+
+.contact-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+.contact-info h3{
+    font-family:'Playfair Display',serif;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    color:var(--muted);
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+.contact-detail{
+    display:flex;
+    align-items:center;
+    gap:17px;
+    margin:23px 0;
+}
+
+.contact-detail i{
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    background:var(--dark);
+    color:var(--orange);
+    border-radius:50%;
+    flex-shrink:0;
+}
+
+.contact-form{
+    background:white;
+    padding:35px;
+    border-radius:8px;
+    box-shadow:0 10px 40px #0000000c;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:17px;
+    border:1px solid #dededb;
+    outline:none;
+    font-family:inherit;
+    border-radius:4px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{border-color:var(--orange)}
+
+.contact-form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:var(--orange);
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact-form button:hover{background:var(--dark)}
+
+/* FOOTER */
+
+footer{
+    background:var(--dark2);
+    color:white;
+    padding:55px 7% 25px;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.footer-content p{
+    color:#b9bdc1;
+    margin-top:15px;
+    line-height:1.8;
+    max-width:350px;
+}
+
+.footer-links a{
+    display:block;
+    text-decoration:none;
+    color:#b9bdc1;
+    margin:13px 0;
+    transition:.3s;
+}
+
+.footer-links a:hover{color:var(--orange)}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #ffffff20;
+    padding-top:22px;
+    margin-top:40px;
+    color:#999fa5;
+    font-size:13px;
+}
+
+/* ANIMATIONS */
+
+@keyframes slideUp{
+    from{opacity:0;transform:translateY(40px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+    .service-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:767px){
+    .navbar{padding:17px 20px}
+    .menu-toggle{display:block}
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:var(--dark);
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px;
+        gap:23px;
+    }
+
+    .nav-links.show{display:flex}
+
+    .dropdown-menu{
+        position:static;
+        width:100%;
+        margin-top:10px;
+        display:none;
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+        transform:none;
+        transition:none;
+    }
+
+    .dropdown.open .dropdown-menu{display:block}
+
+    .hero{
+        min-height:650px;
+        padding:130px 7% 80px;
+    }
+
+    .intro-content,
+    .contact-grid{grid-template-columns:1fr}
+
+    .service-grid,
+    .gallery-grid{grid-template-columns:1fr}
+
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+
+    section{padding:75px 6%}
+
+    .intro-image img{height:300px}
+
+    .cta h2{font-size:32px}
+}
+
+@media(max-width:400px){
+    .why-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+    <div class="logo">PRINT<span>ORA.</span></div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+
+        <li class="dropdown" id="serviceDropdown">
+            <div class="services-nav-row">
+                <a class="services-main-link" href="#services">Services</a>
+                <button class="dropdown-toggle" type="button"
+                aria-label="Toggle services menu"
+                aria-expanded="false"
+                onclick="toggleDropdown(event)">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            <div class="dropdown-menu">
+                <a href="#services">Business Cards</a>
+                <a href="#services">Brochure Printing</a>
+                <a href="#services">Banner Printing</a>
+                <a href="#services">Poster Printing</a>
+                <a href="#services">Packaging</a>
+            </div>
+        </li>
+
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-btn">Get Quote</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="hero-content">
+    <span class="hero-tag">PREMIUM DIGITAL PRINTING STUDIO</span>
+    <h1>Ideas Into <span>Beautiful</span> Prints.</h1>
+    <p>
+        Bringing your ideas to life with premium quality printing,
+        creative designs and professional finishing.
+        Make every impression unforgettable.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#services" class="btn btn-gold">Explore Services</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="intro" id="about">
+<div class="intro-content reveal">
+    <div class="intro-image">
+        <img src="https://i.pinimg.com/736x/94/59/65/94596575739bfc41650372ed55481c22.jpg" alt="Printing studio">
+    </div>
+
+    <div class="intro-text">
+        <small>ABOUT OUR STUDIO</small>
+        <h2>Printing Excellence With A Creative Touch.</h2>
+        <p>
+            We believe every design deserves to look its best.
+            From business essentials to creative marketing materials,
+            we deliver quality prints with attention to every detail.
+        </p>
+        <a href="#contact" class="btn btn-gold">Know More</a>
+    </div>
+</div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+<div class="section-heading reveal">
+    <small>WHAT WE OFFER</small>
+    <h2>Our Premium Services</h2>
+    <p>Creative printing solutions for every business and occasion.</p>
+</div>
+
+<div class="service-grid">
+
+    <div class="service-card reveal">
+        <div class="service-img">
+            <img src="https://i.pinimg.com/1200x/f2/61/b8/f261b8455987fe303bdea766c4ad7d24.jpg" alt="Business cards">
+        </div>
+        <div class="service-info">
+            <i class="fas fa-address-card"></i>
+            <h3>Business Cards</h3>
+            <p>Premium visiting cards that create a memorable first impression.</p>
+            <a href="#contact">Explore Service →</a>
+        </div>
+    </div>
+
+    <div class="service-card reveal">
+        <div class="service-img">
+            <img src="https://i.pinimg.com/1200x/92/ec/69/92ec69622c894e8de0b64966ef1b48ca.jpg" alt="Brochure">
+        </div>
+        <div class="service-info">
+            <i class="fas fa-book-open"></i>
+            <h3>Brochure Printing</h3>
+            <p>Beautifully designed brochures to showcase your brand.</p>
+            <a href="#contact">Explore Service →</a>
+        </div>
+    </div>
+
+    <div class="service-card reveal">
+        <div class="service-img">
+            <img src="https://i.pinimg.com/1200x/e9/5d/1a/e95d1ae9c5e50005ead23b8da21335b1.jpg" alt="Poster design">
+        </div>
+        <div class="service-info">
+            <i class="fas fa-image"></i>
+            <h3>Poster Printing</h3>
+            <p>Eye-catching posters for events, promotions and advertising.</p>
+            <a href="#contact">Explore Service →</a>
+        </div>
+    </div>
+
+    <div class="service-card reveal">
+        <div class="service-img">
+            <img src="https://i.pinimg.com/736x/03/12/c2/0312c2a6012dcd69ae0a132b3c54cdeb.jpg" alt="Banner">
+        </div>
+        <div class="service-info">
+            <i class="fas fa-flag"></i>
+            <h3>Banner Printing</h3>
+            <p>High-quality banners for your business and special events.</p>
+            <a href="#contact">Explore Service →</a>
+        </div>
+    </div>
+
+    <div class="service-card reveal">
+        <div class="service-img">
+            <img src="https://i.pinimg.com/1200x/ac/77/94/ac7794ca9ed10f2afb26461c63176e01.jpg" alt="Branding">
+        </div>
+        <div class="service-info">
+            <i class="fas fa-box-open"></i>
+            <h3>Packaging</h3>
+            <p>Professional packaging that gives your products a premium look.</p>
+            <a href="#contact">Explore Service →</a>
+        </div>
+    </div>
+
+    <div class="service-card reveal">
+        <div class="service-img">
+            <img src="https://i.pinimg.com/1200x/86/41/dd/8641dda5c11b1169e98a45e254a041e9.jpg" alt="Custom printing">
+        </div>
+        <div class="service-info">
+            <i class="fas fa-print"></i>
+            <h3>Custom Printing</h3>
+            <p>Personalized printing solutions made specially for your needs.</p>
+            <a href="#contact">Explore Service →</a>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="why">
+<div class="section-heading reveal">
+    <small>WHY PRINTORA</small>
+    <h2>Why Choose Us?</h2>
+</div>
+
+<div class="why-grid">
+    <div class="why-card reveal">
+        <i class="fas fa-gem"></i>
+        <h3>Premium Quality</h3>
+        <p>High-quality materials and excellent finishing.</p>
+    </div>
+
+    <div class="why-card reveal">
+        <i class="fas fa-clock"></i>
+        <h3>On Time Delivery</h3>
+        <p>We value your time and deliver on schedule.</p>
+    </div>
+
+    <div class="why-card reveal">
+        <i class="fas fa-palette"></i>
+        <h3>Creative Design</h3>
+        <p>Unique designs that make your brand stand out.</p>
+    </div>
+
+    <div class="why-card reveal">
+        <i class="fas fa-handshake"></i>
+        <h3>Customer Support</h3>
+        <p>Friendly support throughout your printing journey.</p>
+    </div>
+</div>
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+<div class="section-heading reveal">
+    <small>OUR CREATIVE WORK</small>
+    <h2>Explore Our Gallery</h2>
+    <p>A glimpse of creativity, colours and premium printing.</p>
+</div>
+
+<div class="gallery-grid">
+    <div class="gallery-item reveal">
+        <img src="https://i.pinimg.com/736x/ad/0a/c8/ad0ac89c4a208032d8c16a0fd535be00.jpg" alt="Print project">
+    </div>
+
+    <div class="gallery-item reveal">
+        <img src="https://i.pinimg.com/736x/62/80/74/62807430a7adaa94e1d49c7ab00e7136.jpg" alt="Business cards">
+    </div>
+
+    <div class="gallery-item reveal">
+        <img src="https://i.pinimg.com/736x/8d/f8/51/8df8516fd97cbcff9893d645978033f0.jpg" alt="Creative design">
+    </div>
+
+    <div class="gallery-item reveal">
+        <img src="https://i.pinimg.com/1200x/82/b6/87/82b6879dc1b16dc2e670c19bf95e49cc.jpg" alt="Workspace">
+    </div>
+
+    <div class="gallery-item reveal">
+        <img src="https://i.pinimg.com/1200x/92/ec/69/92ec69622c894e8de0b64966ef1b48ca.jpg" alt="Printing materials">
+    </div>
+
+    <div class="gallery-item reveal">
+        <img src="https://i.pinimg.com/736x/c2/ac/7d/c2ac7d3359c4e0b4c4c5ccbd74c44d92.jpg" alt="Creative work">
+    </div>
+</div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+    <div class="reveal">
+        <h2>Let's Create Something Amazing.</h2>
+        <p>Have a project in mind? Let's bring your ideas to life.</p>
+        <a href="#contact" class="btn btn-gold">Start Your Project</a>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+<div class="section-heading reveal">
+    <small>GET IN TOUCH</small>
+    <h2>Let's Talk About Your Project</h2>
+</div>
+
+<div class="contact-grid">
+    <div class="contact-info reveal">
+        <h3>Let's Connect</h3>
+        <p>
+            Have questions about our printing services?
+            Send us a message and let's discuss your requirements.
+        </p>
+
+        <div class="contact-detail">
+            <i class="fas fa-location-dot"></i>
+            <div>
+                <h4>Our Location</h4>
+                <p>Perumbavoor, Kerala</p>
+            </div>
+        </div>
+
+        <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <div>
+                <h4>Email Us</h4>
+                <p>hello@printora.com</p>
+            </div>
+        </div>
+
+        <div class="contact-detail">
+            <i class="fas fa-phone"></i>
+            <div>
+                <h4>Call Us</h4>
+                <p>+91 3456 45680</p>
+            </div>
+        </div>
+    </div>
+
+    <form class="contact-form reveal" onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="subject" placeholder="Subject">
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message <i class="fas fa-arrow-right"></i></button>
+    </form>
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<div class="footer-content">
+    <div>
+        <div class="logo">PRINT<span>ORA.</span></div>
+        <p>Turning creative ideas into beautiful prints. Quality, creativity and excellence in every impression.</p>
+    </div>
+
+    <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-links">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+</div>
+
+<div class="copyright">
+    © 2026 Printora. All Rights Reserved.
+</div>
+</footer>
+
+<script>
+
+// MOBILE MENU
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+// SERVICES DROPDOWN
+function toggleDropdown(event){
+    event.preventDefault();
+    event.stopPropagation();
+
+    const dropdown=document.getElementById("serviceDropdown");
+    const toggle=dropdown.querySelector(".dropdown-toggle");
+    const isOpen=dropdown.classList.toggle("open");
+
+    toggle.setAttribute("aria-expanded",String(isOpen));
+}
+
+// CLOSE DROPDOWN OUTSIDE CLICK
+document.addEventListener("click",function(event){
+    const dropdown=document.getElementById("serviceDropdown");
+
+    if(!dropdown.contains(event.target)){
+        dropdown.classList.remove("open");
+        dropdown.querySelector(".dropdown-toggle")
+        .setAttribute("aria-expanded","false");
+    }
+});
+
+// CLOSE MOBILE MENU AFTER NAVIGATION
+document.querySelectorAll(".nav-links a").forEach(link=>{
+    link.addEventListener("click",function(){
+        document.getElementById("navLinks").classList.remove("show");
+
+        const dropdown=document.getElementById("serviceDropdown");
+        dropdown.classList.remove("open");
+        dropdown.querySelector(".dropdown-toggle")
+        .setAttribute("aria-expanded","false");
+    });
+});
+
+// SCROLL ANIMATION
+const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
+    });
+},{threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(element=>{
+    observer.observe(element);
+});
+
+// CONTACT WHATSAPP
+function sendMessage(event){
+    event.preventDefault();
+
+    const name=document.getElementById("name").value;
+    const email=document.getElementById("email").value;
+    const subject=document.getElementById("subject").value;
+    const message=document.getElementById("message").value;
+
+    const whatsappNumber="910000000000";
+
+    const text=`Hello Printora!
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+Message: ${message}`;
+
+    window.open(
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`,
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
